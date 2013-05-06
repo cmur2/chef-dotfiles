@@ -22,7 +22,7 @@ Requires the git cookbook.
 
 ### default
 
-Uses a hash of user_name -> config mappings in `node['dotfiles']['users']` to determine the users and their git clone URLs from e.g `node['dotfiles']['users']['foo']['repo']` and calls a `configure.sh` after cloning.
+Uses a hash of user_name -> config mappings in `node['dotfiles']['users']` to determine the users and their git clone URLs from e.g `node['dotfiles']['users']['foo']['repo']` (and respects `node['dotfiles']['users']['foo']['ref']`) and calls a `configure.sh` after cloning.
 
 ## License
 

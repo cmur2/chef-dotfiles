@@ -12,7 +12,7 @@ node['dotfiles']['users'].each do |user,config|
   
   git dotfiles_dir do
     repository config['repo']
-    reference 'master'
+    reference (config['ref'] || 'master')
     user user
     group user
     action :sync
