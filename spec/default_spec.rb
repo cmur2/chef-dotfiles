@@ -38,6 +38,6 @@ describe 'dotfiles::default' do
     }
     chef_runner.node.set['etc']['passwd']['foo-0815']['dir'] = '/home/foo'
     chef_run = chef_runner.converge 'dotfiles::default'
-    expect(chef_run).to execute_command '/home/foo/dotfiles/configure.sh'
+    expect(chef_run).to execute_command 'sudo -H -u foo-0815 /home/foo/dotfiles/configure.sh'
   end
 end
