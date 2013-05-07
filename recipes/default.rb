@@ -19,7 +19,6 @@ node['dotfiles']['users'].each do |user,config|
   end
 
   execute "#{dotfiles_dir}/configure.sh" do
-    user user
-    command "#{dotfiles_dir}/configure.sh"
+    command "sudo -H -u #{user} #{dotfiles_dir}/configure.sh"
   end
 end

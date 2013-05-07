@@ -16,7 +16,7 @@ Use `recipe[dotfiles::default]` for cloning a git repository per user.
 
 It should work on any *nix.
 
-Requires the git cookbook.
+Requires the git cookbook. And `sudo` is required (to easily change user with home directory).
 
 ## Recipes
 
