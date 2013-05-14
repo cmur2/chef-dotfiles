@@ -2,7 +2,11 @@
 include_recipe "git"
 
 node['dotfiles']['users'].each do |user,config|
-  dotfiles_dir = "#{node['etc']['passwd'][user]['dir']}/dotfiles"
+  if node['etc']['passwd'][user]
+    dotfiles_dir = "#{node['etc']['passwd'][user]['dir']}/dotfiles"
+  else
+    dotfiles_dir = config['dotfiles_dir']
+  end
   
   directory dotfiles_dir do
     owner user
